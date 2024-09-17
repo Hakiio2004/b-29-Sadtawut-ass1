@@ -20,11 +20,18 @@ public class Main : MonoBehaviour
         captainAmerica.LeapAndJump();
         captainAmerica.UpdateArmorStrenght(5.25f);
 
+       int rendomDamage;
+       
        //เมื่อเลือดทั้ง 2 ตีไม่ตายจะตีวนลูปตีเรื่อยๆ
-        while (ironMan.Hp >= 0 && captainAmerica.Hp >= 0)
+        while (!ironMan.Hp >= 0 && captainAmerica.Hp >= 0)
         {
-            ironMan.ShootLaser(captainAmerica);
-            captainAmerica.ThrowShield(ironMan);
+           rendomDamage = Rendom.Range(10, 21);
+           ironMan.ShootingLaser();
+           captainAmerica.TakeDamage(rendomDamage)
+
+           rendomDamage = Rendom.Range(10, 21);
+           captainAmerica.ThrowShield();
+           captainAmerica.TakeDamage(rendomDamage)
         }    
     }
 }
