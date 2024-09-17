@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-
+    public IronMan ironMan;
+    public CaptainAmerica captainAmerica;
+    
+    
+    
     // ตัวรันชุดคำสั่งทั้งหมด
     void Start()
     {
-        ironMan.Name("Milk");
+        ironMan.Name"Milk";
         
         IronMan ironMan = new IronMan("Tony", 100, "Red");
         Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");

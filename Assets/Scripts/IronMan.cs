@@ -1,12 +1,7 @@
 ﻿using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
-class IronMan : SuperHero
+public Sclass IronMan : SuperHero
 {
-    public IronMan(string newName, int newHp, string newSuitColor) : base(newName, newHp, newSuitColor)
-    {
-
-    }
-   
     //ชื่อท่า
     public void Fly()
     {
