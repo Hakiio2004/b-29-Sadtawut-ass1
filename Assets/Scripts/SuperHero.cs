@@ -28,20 +28,6 @@ public class SuperHero : MonoBehaviour
        public string SuitColor { get; set; }
 
        private float armorStrenght;
-
-       public string GrtHp()
-       {
-            return hp;
-       }
-
-    }
-
-public SuperHero(string newName, int newHp, string newSuitColor)
-    {
-        Name = newName;
-        Hp = newHp;
-        SuitColor = newSuitColor;
-        armorStrenght = 10;
     }
 
 public void UpdateArmorStrenght(float strenght)

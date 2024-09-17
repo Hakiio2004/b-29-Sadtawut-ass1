@@ -7,23 +7,19 @@ public class Main : MonoBehaviour
 {
     public IronMan ironMan;
     public CaptainAmerica captainAmerica;
-    
+
     
     
     // ตัวรันชุดคำสั่งทั้งหมด
     void Start()
     {
-        ironMan.Name"Milk";
+        ironMan.Name"";
         
-        IronMan ironMan = new IronMan("Tony", 100, "Red");
         Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");
-
         ironMan.Fly();  
         ironMan.UpdateArmorStrenght(5.25f);
 
-        CaptainAmerica captainAmerica  = new CaptainAmerica("Steve", 100, "Blue");
         Debug.Log($"CaptainAmerica name:{captainAmerica.Name} HP:{captainAmerica.Hp} SuitColor:{captainAmerica.SuitColor}");
-
         captainAmerica.LeapAndJump();
         captainAmerica.UpdateArmorStrenght(5.25f);
 
