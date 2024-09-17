@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+
     // ตัวรันชุดคำสั่งทั้งหมด
     void Start()
     {
+        ironMan.Name("Milk");
+        
         IronMan ironMan = new IronMan("Tony", 100, "Red");
         Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");
 
@@ -20,18 +23,22 @@ public class Main : MonoBehaviour
         captainAmerica.LeapAndJump();
         captainAmerica.UpdateArmorStrenght(5.25f);
 
-       int rendomDamage;
-       
-       //เมื่อเลือดทั้ง 2 ตีไม่ตายจะตีวนลูปตีเรื่อยๆ
-        while (!ironMan.Hp >= 0 && captainAmerica.Hp >= 0)
-        {
-           rendomDamage = Rendom.Range(10, 21);
-           ironMan.ShootingLaser();
-           captainAmerica.TakeDamage(rendomDamage)
+    }
 
-           rendomDamage = Rendom.Range(10, 21);
+    //เมื่อเลือดทั้ง 2 ตีไม่ตายจะตีวนลูปตีเรื่อยๆ
+    private void updated ()
+    {
+          if(ironMan.IsDead() || captainAmerica.IsDead)
+         {
+            return;
+         } 
+          
+           int randomDamage = Random.Range(10, 21);
+           ironMan.ShootingLaser();
+           captainAmerica.TakeDamage(randomDamage);
+
+           randomDamage = Rendom.Range(10, 21);
            captainAmerica.ThrowShield();
-           captainAmerica.TakeDamage(rendomDamage)
-        }    
+           captainAmerica.TakeDamage(randomDamage);
     }
 }

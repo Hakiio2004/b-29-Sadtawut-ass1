@@ -3,12 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SuperHero 
+{   
     {
-       public string Name;
-    public int Hp;
-    public string SuitColor;
-    private float armorStrenght;
+       protected string name;
+       public string Name
+       {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (name == null || name "")
+                {
+                    name = "N/A";
+                }
+            }
+       }
+
+       protected int Hp; 
+      
+       public int Hp { get { return hp; } set { hp = value; } }
+
+       public string SuitColor { get; set; }
+
+       private float armorStrenght;
+
+       public string GrtHp()
+       {
+            return hp;
+       }
+
     }
+
 public SuperHero(string newName, int newHp, string newSuitColor)
     {
         Name = newName;
@@ -16,24 +43,28 @@ public SuperHero(string newName, int newHp, string newSuitColor)
         SuitColor = newSuitColor;
         armorStrenght = 10;
     }
+
 public void UpdateArmorStrenght(float strenght)
     {
         armorStrenght += strenght;
-        Debug.Log($"{Name} updated armor to {armorStrenght}");
+        Debug.Log($"{name} updated armor to {armorStrenght}");
     }
+
 public void TakeDamage(int Damage)
     {
         Hp -= Damage;
         Debug.Log($"When damaged{Hp}");
 
         if (IsDead());
+        {
+            Debug.Log{$"{name} is Dead"}
+        }
        
     }
+    
     public bool IsDead()
     {
-        if (Hp <= 0)
-        {
-            Debug.Log($"IronMan is Dead");
-        }
-        return true;
+        return Hp <= 0;
     }
+    
+}

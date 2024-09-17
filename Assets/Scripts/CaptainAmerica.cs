@@ -3,7 +3,7 @@ using UnityEngine;
 
 class CaptainAmerica : SuperHero
 {
-   public IronMan(string newName, int newHp, string newSuitColor) : base(newName, newHp, newSuitColor)
+    public IronMan(string newName, int newHp, string newSuitColor) : base(newName, newHp, newSuitColor)
     {
         
     }
@@ -11,11 +11,11 @@ class CaptainAmerica : SuperHero
     //ชือท่า
     public void LeapAndJump()
     {
-        Debug.Log($" {Name} is LeapAndJump");
+        Debug.Log($" {name} is LeapAndJump");
     }
     //กำหนด Rendom ดาเมท IronMan
     public void ThrowShield(IronMan target)
     {
-        Debug.Log($" {Name} is  ThrowShield");
+        Debug.Log($" {name} is  ThrowShield");
     }
 }

@@ -4,17 +4,17 @@ class IronMan : SuperHero
 {
     public IronMan(string newName, int newHp, string newSuitColor) : base(newName, newHp, newSuitColor)
     {
-        
+
     }
    
     //ชื่อท่า
     public void Fly()
     {
-        Debug.Log($" {Name} is flying");
+        Debug.Log($" {name} is flying");
     }
     //กำหนด Rendom ดาเมท CaptainAmerica
     public void ShootLaser(CaptainAmerica target)
     {
-        Debug.Log($" {Name} is ShootingLaser");
+        Debug.Log($" {name} is ShootingLaser");
     }
 }
