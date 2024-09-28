@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class CaptainAmerica : SuperHero
 {
-    //ชือท่า
+   
     public void LeapAndJump()
     {
-        Debug.Log($" {name} is LeapAndJump");
+        Debug.Log($" {_name} is LeapAndJump");
     }
     //กำหนด Rendom ดาเมท IronMan
-    public void ThrowShield(IronMan target)
+    public void ThrowShield()
     {
-        Debug.Log($" {name} is  ThrowShield");
+        Debug.Log($" {_name} is  ThrowShield");
     }
 }

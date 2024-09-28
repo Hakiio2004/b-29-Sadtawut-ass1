@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
-public Sclass IronMan : SuperHero
+
+public class IronMan : SuperHero
 {
     //ชื่อท่า
     public void Fly()
     {
-        Debug.Log($" {name} is flying");
+        Debug.Log($" {_name} is flying");
     }
     //กำหนด Rendom ดาเมท CaptainAmerica
-    public void ShootLaser(CaptainAmerica target)
+    public void ShootLaser()
     {
-        Debug.Log($" {name} is ShootingLaser");
+        Debug.Log($" {_name} is ShootingLaser");
     }
 }

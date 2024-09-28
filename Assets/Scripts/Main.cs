@@ -6,38 +6,33 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     public IronMan ironMan;
-    public CaptainAmerica captainAmerica;
+    public CaptainAmerica captainAmerica ;
 
-    
-    
     // ตัวรันชุดคำสั่งทั้งหมด
     void Start()
     {
-        ironMan.Name"";
-        
-        Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");
-        ironMan.Fly();  
-        ironMan.UpdateArmorStrenght(5.25f);
+        ironMan.Name = "";
 
+        Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");
         Debug.Log($"CaptainAmerica name:{captainAmerica.Name} HP:{captainAmerica.Hp} SuitColor:{captainAmerica.SuitColor}");
-        captainAmerica.LeapAndJump();
+
+        ironMan.UpdateArmor(5.25f);
         captainAmerica.UpdateArmorStrenght(5.25f);
 
+        while (ironMan.IsDead() || captainAmerica.IsDead())
+        {
+            break;
+        }
     }
 
     //เมื่อเลือดทั้ง 2 ตีไม่ตายจะตีวนลูปตีเรื่อยๆ
-    private void updated ()
+    private void Update ()
     {
-          if(ironMan.IsDead() || captainAmerica.IsDead)
-         {
-            return;
-         } 
-          
            int randomDamage = Random.Range(10, 21);
-           ironMan.ShootingLaser();
+           ironMan.ShootLaser();
            captainAmerica.TakeDamage(randomDamage);
 
-           randomDamage = Rendom.Range(10, 21);
+           randomDamage = Random.Range(10, 21);
            captainAmerica.ThrowShield();
            captainAmerica.TakeDamage(randomDamage);
     }
