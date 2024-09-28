@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuperHero : MonoBehaviour
+public abstract class SuperHero : MonoBehaviour
 {
    
     protected string _name;
@@ -21,7 +21,20 @@ public class SuperHero : MonoBehaviour
             _name = value;
         }
     }
+    public abstract void Move();
+    public abstract void Attack();
 
+    private void Start()
+    {
+        Move();
+        Attack();
+        SpecialBility();
+    }
+
+    public virtual void SpecialBility()
+    {
+
+    }
     protected int hp;
 
     public int Hp { get { return hp; } set { hp = value; } }
@@ -29,14 +42,6 @@ public class SuperHero : MonoBehaviour
     public string SuitColor { get; protected set; }
 
     private float armorStrenght;
-
-    public SuperHero(string newName, int newHp, string newSuitColor) 
-    {
-        _name= newName;
-        hp = newHp;
-        SuitColor = newSuitColor;   
-        armorStrenght = 10;
-    }
 
     public void UpdateArmorStrenght(float strenght)
     {

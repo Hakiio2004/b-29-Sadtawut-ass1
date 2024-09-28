@@ -3,13 +3,13 @@ using static UnityEngine.GraphicsBuffer;
 
 public class IronMan : SuperHero
 {
-    //ชื่อท่า
-    public void Fly()
+   
+    public override void Move()
     {
         Debug.Log($" {_name} is flying");
     }
     //กำหนด Rendom ดาเมท CaptainAmerica
-    public void ShootLaser()
+    public override void Attack()
     {
         Debug.Log($" {_name} is ShootingLaser");
     }

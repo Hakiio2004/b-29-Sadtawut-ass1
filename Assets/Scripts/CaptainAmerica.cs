@@ -4,12 +4,12 @@ using UnityEngine;
 public class CaptainAmerica : SuperHero
 {
    
-    public void LeapAndJump()
+    public override void Move()
     {
         Debug.Log($" {_name} is LeapAndJump");
     }
     //กำหนด Rendom ดาเมท IronMan
-    public void ThrowShield()
+    public override void Attack()
     {
         Debug.Log($" {_name} is  ThrowShield");
     }

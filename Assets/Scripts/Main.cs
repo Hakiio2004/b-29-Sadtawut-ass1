@@ -16,7 +16,7 @@ public class Main : MonoBehaviour
         Debug.Log($"IronMan name:{ironMan.Name} HP:{ironMan.Hp} SuitColor:{ironMan.SuitColor}");
         Debug.Log($"CaptainAmerica name:{captainAmerica.Name} HP:{captainAmerica.Hp} SuitColor:{captainAmerica.SuitColor}");
 
-        ironMan.UpdateArmor(5.25f);
+        ironMan.UpdateArmorStrenght(5.25f);
         captainAmerica.UpdateArmorStrenght(5.25f);
 
         while (ironMan.IsDead() || captainAmerica.IsDead())
@@ -29,11 +29,11 @@ public class Main : MonoBehaviour
     private void Update ()
     {
            int randomDamage = Random.Range(10, 21);
-           ironMan.ShootLaser();
+           ironMan.Attack();
            captainAmerica.TakeDamage(randomDamage);
 
            randomDamage = Random.Range(10, 21);
-           captainAmerica.ThrowShield();
+           captainAmerica.Attack();
            captainAmerica.TakeDamage(randomDamage);
     }
 }
